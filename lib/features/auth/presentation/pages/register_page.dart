@@ -39,6 +39,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Theme.of(context).colorScheme.primary),
               ),
               const SizedBox(height: 50),
+              MyTextField(
+                controller: namecontroller,
+                obscureText: false,
+                hintText: 'Name',
+              ),
+              const SizedBox(height: 20),
 
               //email text feild
               MyTextField(
@@ -54,9 +60,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 hintText: 'Password',
               ),
               const SizedBox(height: 20),
+              MyTextField(
+                controller: confirmPwcontroller,
+                obscureText: true,
+                hintText: 'Conform Password',
+              ),
+              const SizedBox(height: 20),
 
               //login btn
-              MyButton(onTap: () {}, text: 'login'),
+              MyButton(onTap: () {}, text: 'Register'),
               const SizedBox(height: 20),
 
               //not member? register now
