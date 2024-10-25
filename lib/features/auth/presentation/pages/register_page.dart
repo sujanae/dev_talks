@@ -72,7 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 20),
 
               //not member? register now
-              Text("Not a member? Register now",
+              Text("Aready a  member? Login now!!",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary))
             ]),
