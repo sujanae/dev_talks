@@ -1,5 +1,4 @@
 import 'package:dev_talks/features/auth/presentation/pages/auht_page.dart';
-import 'package:dev_talks/features/auth/presentation/pages/login_page.dart';
 import 'package:dev_talks/firebase_options.dart';
 import 'package:dev_talks/themes/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
