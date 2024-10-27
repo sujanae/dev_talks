@@ -1,7 +1,11 @@
 import 'package:dev_talks/features/auth/presentation/components/my_button.dart';
 import 'package:dev_talks/features/auth/presentation/components/my_text_field.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubits/auth_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function() onTap;
@@ -18,6 +22,32 @@ class _LoginPageState extends State<LoginPage> {
   //controller
   final emailcontroller = TextEditingController();
   final pwcontroller = TextEditingController();
+
+  void login() {
+    final email = emailcontroller.text;
+    final pw = pwcontroller.text;
+
+    final authCubit = context.read<AuthCubit>();
+
+    if (email.isNotEmpty && pw.isNotEmpty) {
+      authCubit.login(email, pw);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter email and password'),
+        ),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    emailcontroller.dispose();
+    pwcontroller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
 
               //login btn
-              MyButton(onTap: () {}, text: 'login'),
+              MyButton(onTap: login, text: 'login'),
               const SizedBox(height: 20),
 
               //not member? register now
