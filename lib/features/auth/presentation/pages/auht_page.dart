@@ -26,7 +26,7 @@ class _AuthPageState extends State<AuthPage> {
         onTap: () {},
       );
     } else {
-      return RegisterPage();
+      return const RegisterPage();
     }
   }
 }
