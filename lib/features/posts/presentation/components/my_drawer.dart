@@ -27,14 +27,16 @@ class MyDrawer extends StatelessWidget {
               MyDrawerTile(
                 icon: Icons.home,
                 title: "H O M E",
-                onTap: () {},
+                onTap: () => Navigator.of(context).pop(),
               ),
 
               //profile
               MyDrawerTile(
                 icon: Icons.person,
                 title: "P R O F I L E",
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
               ),
 
               //search
