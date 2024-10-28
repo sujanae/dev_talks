@@ -23,10 +23,12 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     if (showLoginPage) {
       return LoginPage(
-        onTap: () {},
+        togglePages: togglePages,
       );
     } else {
-      return const RegisterPage();
+      return RegisterPage(
+        togglePages: togglePages,
+      );
     }
   }
 }

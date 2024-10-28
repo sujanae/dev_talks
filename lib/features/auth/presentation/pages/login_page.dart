@@ -8,10 +8,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubits/auth_cubit.dart';
 
 class LoginPage extends StatefulWidget {
-  final void Function() onTap;
+  final void Function() togglePages;
   const LoginPage({
     super.key,
-    required this.onTap,
+    required this.togglePages,
   });
 
   @override
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.primary)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.togglePages,
                     child: Text(" Register now",
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.inversePrimary,
