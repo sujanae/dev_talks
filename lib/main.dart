@@ -1,5 +1,5 @@
 import 'package:dev_talks/app.dart';
-import 'package:dev_talks/firebase_options.dart';
+import 'package:dev_talks/config/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
