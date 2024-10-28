@@ -61,72 +61,77 @@ class _RegisterPageState extends State<RegisterPage> {
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Center(
           child: SafeArea(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(
-                Icons.person_2,
-                size: 80,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(height: 50),
-              //welcome back msg
-              Text(
-                'Lets Create an Acount For You! ',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary),
-              ),
-              const SizedBox(height: 50),
-              MyTextField(
-                controller: namecontroller,
-                obscureText: false,
-                hintText: 'Name',
-              ),
-              const SizedBox(height: 20),
-
-              //email text feild
-              MyTextField(
-                controller: emailcontroller,
-                obscureText: false,
-                hintText: 'Email',
-              ),
-              const SizedBox(height: 20),
-              //pw text feild
-              MyTextField(
-                controller: pwcontroller,
-                obscureText: true,
-                hintText: 'Password',
-              ),
-              const SizedBox(height: 20),
-              MyTextField(
-                controller: confirmPwcontroller,
-                obscureText: true,
-                hintText: 'Confirm Password',
-              ),
-              const SizedBox(height: 20),
-
-              //login btn
-              MyButton(onTap: register, text: 'Register'),
-              const SizedBox(height: 20),
-
-              //not member? register now
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Already a member? ",
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.person_2,
+                      size: 80,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    const SizedBox(height: 50),
+                    //welcome back msg
+                    Text(
+                      'Lets Create an Acount For You! ',
                       style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary)),
-                  GestureDetector(
-                    onTap: widget.togglePages,
-                    child: Text(" Login now",
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.inversePrimary,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                ],
-              )
-            ]),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                    const SizedBox(height: 50),
+                    MyTextField(
+                      controller: namecontroller,
+                      obscureText: false,
+                      hintText: 'Name',
+                    ),
+                    const SizedBox(height: 20),
+
+                    //email text feild
+                    MyTextField(
+                      controller: emailcontroller,
+                      obscureText: false,
+                      hintText: 'Email',
+                    ),
+                    const SizedBox(height: 20),
+                    //pw text feild
+                    MyTextField(
+                      controller: pwcontroller,
+                      obscureText: true,
+                      hintText: 'Password',
+                    ),
+                    const SizedBox(height: 20),
+                    MyTextField(
+                      controller: confirmPwcontroller,
+                      obscureText: true,
+                      hintText: 'Confirm Password',
+                    ),
+                    const SizedBox(height: 20),
+
+                    //login btn
+                    MyButton(onTap: register, text: 'Register'),
+                    const SizedBox(height: 20),
+
+                    //not member? register now
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Already a member? ",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary)),
+                        GestureDetector(
+                          onTap: widget.togglePages,
+                          child: Text(" Login now",
+                              style: TextStyle(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .inversePrimary,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    )
+                  ]),
+            ),
           ),
         ),
       ),

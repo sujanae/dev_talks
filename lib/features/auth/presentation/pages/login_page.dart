@@ -55,60 +55,65 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Center(
           child: SafeArea(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(
-                Icons.lock_open_rounded,
-                size: 80,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(height: 50),
-              //welcome back msg
-              Text(
-                'Welcome Back ',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary),
-              ),
-              const SizedBox(height: 50),
-
-              //email text feild
-              MyTextField(
-                controller: emailcontroller,
-                obscureText: false,
-                hintText: 'Email',
-              ),
-              const SizedBox(height: 20),
-              //pw text feild
-              MyTextField(
-                controller: pwcontroller,
-                obscureText: true,
-                hintText: 'Password',
-              ),
-              const SizedBox(height: 20),
-
-              //login btn
-              MyButton(onTap: login, text: 'login'),
-              const SizedBox(height: 20),
-
-              //not member? register now
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Not a member? ",
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.lock_open_rounded,
+                      size: 80,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    const SizedBox(height: 50),
+                    //welcome back msg
+                    Text(
+                      'Welcome Back ',
                       style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary)),
-                  GestureDetector(
-                    onTap: widget.togglePages,
-                    child: Text(" Register now",
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.inversePrimary,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                ],
-              )
-            ]),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                    const SizedBox(height: 50),
+
+                    //email text feild
+                    MyTextField(
+                      controller: emailcontroller,
+                      obscureText: false,
+                      hintText: 'Email',
+                    ),
+                    const SizedBox(height: 20),
+                    //pw text feild
+                    MyTextField(
+                      controller: pwcontroller,
+                      obscureText: true,
+                      hintText: 'Password',
+                    ),
+                    const SizedBox(height: 20),
+
+                    //login btn
+                    MyButton(onTap: login, text: 'login'),
+                    const SizedBox(height: 20),
+
+                    //not member? register now
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Not a member? ",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary)),
+                        GestureDetector(
+                          onTap: widget.togglePages,
+                          child: Text(" Register now",
+                              style: TextStyle(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .inversePrimary,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    )
+                  ]),
+            ),
           ),
         ),
       ),

@@ -40,12 +40,6 @@ class FirebaseAuthRepo implements AuthRepo {
         name: '',
       );
 
-      //save user data in firestore
-      await firebaseFirestore
-          .collection('users')
-          .doc(user.uid)
-          .set(user.toJson(), SetOptions(merge: true));
-
       //return user
       return user;
 
@@ -76,6 +70,12 @@ class FirebaseAuthRepo implements AuthRepo {
         email: email,
         name: name,
       );
+
+      //save user data in firestore
+      await firebaseFirestore
+          .collection('users')
+          .doc(user.uid)
+          .set(user.toJson());
       //return user
       return user;
 
