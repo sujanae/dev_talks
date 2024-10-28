@@ -1,5 +1,8 @@
-import 'package:dev_talks/features/posts/presentation/components/my_drawer_tile.dart';
+import 'package:dev_talks/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:dev_talks/features/home/presentation/components/my_drawer_tile.dart';
+import 'package:dev_talks/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -36,6 +39,10 @@ class MyDrawer extends StatelessWidget {
                 title: "P R O F I L E",
                 onTap: () {
                   Navigator.of(context).pop();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfilePage()));
                 },
               ),
 
@@ -57,7 +64,7 @@ class MyDrawer extends StatelessWidget {
               MyDrawerTile(
                 icon: Icons.logout,
                 title: "L O G O U T",
-                onTap: () {},
+                onTap: () => context.read<AuthCubit>().logout(),
               ),
             ],
           ),

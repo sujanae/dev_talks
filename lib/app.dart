@@ -2,7 +2,7 @@ import 'package:dev_talks/features/auth/data/firebase_auth_repo.dart';
 import 'package:dev_talks/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:dev_talks/features/auth/presentation/cubits/auth_states.dart';
 import 'package:dev_talks/features/auth/presentation/pages/auth_page.dart';
-import 'package:dev_talks/features/posts/presentation/pages/home_page.dart';
+import 'package:dev_talks/features/home/presentation/pages/home_page.dart';
 import 'package:dev_talks/themes/light_mode.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
